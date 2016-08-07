@@ -7,14 +7,14 @@ import org.weedcraft.DrugPlugin.handlers.ConfigHandler;
 import org.weedcraft.DrugPlugin.handlers.DrugHandler;
 import org.weedcraft.DrugPlugin.handlers.PlayerHandler;
 
-public class DMUConfigReloadEvent extends Event {
+public class WCDConfigReloadEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
     private DrugHandler dh;
     private PlayerHandler ph;
     private ConfigHandler ch;
 
-    public DMUConfigReloadEvent() {
+    public WCDConfigReloadEvent() {
         this.dh = WCDrugs.getDrugHandler();
         this.ph = WCDrugs.getPlayerHandler();
         this.ch = WCDrugs.getConfigHandler();

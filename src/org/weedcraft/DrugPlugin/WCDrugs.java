@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
-import org.weedcraft.DrugPlugin.events.DMUConfigReloadEvent;
+import org.weedcraft.DrugPlugin.events.WCDConfigReloadEvent;
 import org.weedcraft.DrugPlugin.handlers.ConfigHandler;
 import org.weedcraft.DrugPlugin.handlers.DrugHandler;
 import org.weedcraft.DrugPlugin.handlers.EventsHandler;
@@ -80,7 +80,7 @@ public class WCDrugs extends JavaPlugin {
                         HandlerList.unregisterAll(this);
                         getServer().getPluginManager().registerEvents(new EventsHandler(this), this);
                         sender.sendMessage(ChatColor.GREEN + "[WCDrugs] Reloaded!");
-                        Bukkit.getServer().getPluginManager().callEvent(new DMUConfigReloadEvent());
+                        Bukkit.getServer().getPluginManager().callEvent(new WCDConfigReloadEvent());
                         return true;
                     }
                 }
