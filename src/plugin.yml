@@ -1,0 +1,25 @@
+name: WCDrugs
+main: org.weedcraft.DrugPlugin.WCDrugs
+version: 1.0
+author: SomeKindOfStick
+commands:
+  wcdrugs:
+    aliases: [wcd, drug]
+    description: Take drugs in minecraft
+    usage: "Incorrect usage. '/wcdrugs [cleardrugs/reload]'"
+permissions:
+    drugs.*:
+        description: Gives access to all WCDrugs features
+        children:
+            drugs.use: true
+            drugs.reload: true
+            drugs.cleardrugs: true
+    drugs.use:
+        description: Allows users to do drugs
+        default: op    
+    drugs.reload:
+        description: Reloads the config
+        default: op    
+    drugs.cleardrugs:
+        description: Clears drugs from player
+        default: op

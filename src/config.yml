@@ -1,0 +1,296 @@
+# ######### Effects #########
+# 0 - Nausea (Screen Spin)
+# 1 - Zoom-In & Walk Slow
+# 2 - Zoom-Out & Walk Fast
+# 3 - Blindness
+# 4 - Hunger
+# 5 - High Jump
+# 6 - Sickness & Slower Hitting
+# 7 - Drunk (Word Scramble)
+# 8 - Instant Healing
+# 9 - Regeneration
+# 10 - Resistance
+# 11 - Fire Resistance
+# 12 - Water Breathing
+# 13 - Invisibility
+# 14 - Night Vision
+# 15 - Poison
+# 16 - Wither Poison
+# 17 - Absorption (NOTE: If you use higher numbers on Absorption MaxPower, your screen will fill with golden hearts! :) )
+# 18 - Saturation
+#  ######## Negatives ########
+# 0 - None
+# 1 - Puke
+# 2 - Catch on fire
+# 3 - Heart Attack
+# 4 - Overdose
+# ######### Particles ########
+#
+# ## NOTE: These may not all work! Try out different things ##
+#
+# - Explode
+# - LargeExplode
+# - HugeExplosion
+# - FireworksSpark
+# - Bubble
+# - Splash
+# - Wake
+# - Suspended
+# - DepthSuspend
+# - Crit
+# - MagicCrit
+# - Smoke
+# - LargeSmoke
+# - Spell
+# - InstantSpell
+# - MobSpell
+# - MobSpellAmbient
+# - WitchMagic
+# - DripWater
+# - DripLava
+# - AngryVillager
+# - HappyVillager
+# - TownAura
+# - Note
+# - Portal
+# - EnchantmentTable
+# - Flame
+# - Lava
+# - Footstep
+# - Cloud
+# - RedDust
+# - SnowballPoof
+# - SnowShovel
+# - Slime
+# - Heart
+# - Barrier
+# - IconCrack
+# - BlockCrack
+# - BlockDust
+# - Droplet
+# - Take
+# - MobAppearance
+# ###########################
+Effects:
+  Nausea:
+    MaxPower: 100
+    MinPower: 10
+    MaxTime: 50
+    MinTime: 15
+  SlowWalk:
+    MaxPower: 100
+    MinPower: 10
+    MaxTime: 50
+    MinTime: 15
+  FastWalk:
+    MaxPower: 100
+    MinPower: 10
+    MaxTime: 50
+    MinTime: 15
+  Blindness:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Hunger:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  HighJump:
+    MaxPower: 15
+    MinPower: 1
+    MaxTime: 50
+    MinTime: 15
+  SlowHit:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Healing:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Regeneration:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Resistance:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  FireResistance:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  WaterBreathing:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Invisibility:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  NightVision:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Poison:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  WitherPoison:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Absorption:
+    MaxPower: 4
+    MinPower: 1
+    MaxTime: 50
+    MinTime: 15
+  Saturation:
+    MaxPower: 1000
+    MinPower: 100
+    MaxTime: 50
+    MinTime: 15
+  Drunk:
+    MaxTime: 50
+    MinTime: 15
+Drugs:
+  # Basic Format:
+  # MATERIAL_NAME:
+  #   Effect: #,#,#
+  #   Negatives: #,#,#
+  #   NegChance: #
+  #   Type: Random/All/None
+  #   DrugName: "&aColored Drug Name"
+  #   Message: "This message is sent when taking the drug"
+  #   Particles:
+  #     ParticleName:
+  #       Repeat: true/false
+  #       Interval: # of ticks to replay
+  #       Amount: # of particles displayed
+  #       Location: Body/Head/Feet
+  #       Visible: true/false
+  #     ParticleTwoName:
+  #       Repeat: true/false
+  #       Interval: # of ticks to replay
+  #       Amount: # of particles displayed
+  #       Location: Body/Head/Feet
+  #       Visible: true/false
+  SUGAR:
+    Effect: 2,5     # The effects that will be given for the drug (List of them above)
+    Negatives: 1,3  # The negative effects that will be given for the drug (List above)
+    NegChance: 30   # Chance (X/100) that negatives will be given when taking the drug
+    Type: Random    # Type of application for the drugs (Random = Choose 1 random effect; All = Do all effects; None = No effects)
+    DrugName: "&fCocaine" # The name of the drug
+  INK_SACK:2:
+    Effect: 0,4
+    Negatives: '0'
+    Type: All
+    DrugName: "&2Marijuana"
+    Particles:
+      LargeSmoke:
+        Repeat: false   # If the particles should repeat while on the drug (or only once)
+        Amount: 50      # Amount of particles to display per second
+        Location: Head  # Location can be Body, Head, or Feet
+        Visible: true   # Whether or not others can see the particles
+  RED_MUSHROOM:
+    Effect: 0,1,3,6,14
+    Negatives: 1,2,3,4
+    NegChance: 5
+    Type: Random
+    DrugName: "&cShrooms"
+    Message: "&7You're about to trip balls" # Optional message to be sent when taking the drug
+    Particles:
+      EnchantmentTable:
+        Repeat: true
+        Amount: 20
+        Location: Head
+        Visible: false
+  POTION:
+    Effect: 2,5,7
+    Negatives: '1'
+    NegChance: 10
+    Type: Random
+    DrugName: "&bVodka"
+    Particles:
+      DripWater:
+        Repeat: false
+        Amount: 50
+        Location: Head
+        Visible: false
+  COOKIE:
+    Effect: 0,2,4,5
+    Negatives: '0'
+    Type: All
+    Smoke: true
+    DrugName: "&6Pot Cookies"
+  SPIDER_EYE:
+    Effect: 0,1,3,6
+    Negatives: 1,2,3,4
+    NegChance: 25
+    Type: All
+    DrugName: "&5Wild &cShrooms"
+    MustSneak: true
+    Particles:
+      Smoke:
+        Repeat: false
+        Amount: 15
+        Location: Body
+        Visible: true
+  PAPER:
+    Effect: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+    Negatives: 1,3
+    NegChance: 5
+    Type: All
+    DrugName: "&2L&eS&4D"
+  FEATHER:
+    Effect: 2,5
+    Negatives: 1,3
+    NegChacne: 10
+    Type: All
+    DrugName: "&7Ecstasy"
+    Particles:
+      HappyVillager:
+        Repeat: false
+        Amount: 20
+        Location: Feet
+        Visible: false
+      Heart:
+        Repeat: true
+        Interval: 5 # How often should particles play (in ticks - 20 ticks = 1 second)
+        Amount: 15
+        Location: Body
+        Visible: true
+  # The amount of drugs in the config are NOT set in stone. Feel free to add or remove to the list of drugs here!
+Chat:
+  Broadcast:
+    Burning: "&c* %playername% bursts into flames"
+    Death: "&c* %playername% OD'd - Don't do drugs kids!"
+    Puke: "&2* %playername% violently pukes his guts out"
+    HeartAttack: "&c* %playername% had a heart attack!"
+  Self:
+    TakeDrugs: "&7You have taken %drugname%&7!"
+    Sober: "&7You begin to feel sober!"
+    Cooldown: "&7You have to wait &a%time% &7more seconds to take another drug"
+  Errors:
+    NoPerms: "&cYou don't have permission for that!"
+Options:
+  DrugCooldown: 0 # How long players should wait to take drugs again
+  Worlds: '*' # Worlds where drugs can be used (* = All; Separate with comma)
+  SaveOldConfigs: true # Save old config files in plugins/DrugMeUp/Old_Configs/
+  EnableBroadcastMessages: true
+  EnableNegativeEffects: true
+  EnableJumpProtection: true # High jump on drug = no fall damage while on drug
+  EnablePlaceProtection: true # Allow/disallow placable drugs to be placed when taking them
+DO_NOT_TOUCH: 1.0.0
